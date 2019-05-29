@@ -28,11 +28,3 @@ private extension UIViewController {
     }
 }
 
-extension BindableType where Self: UIViewController {
-    static func instantiate(fromStoryboard storyboard: UIStoryboard?, identifier: String? = nil, viewModel: Self.ViewModelType) -> Self {
-        let viewController = instantiate(fromStoryboard: storyboard, identifier: identifier)
-        viewController.bindViewModel(viewModel)
-
-        return viewController
-    }
-}
