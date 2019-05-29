@@ -52,4 +52,11 @@ enum Router: TargetType {
 
 class NetworkService {
     private let provider = MoyaProvider<Router>()
+
+    func getCurrentWeather(inCityNamed cityName: String) -> Single<WeatherResponse> {
+        return provider
+            .rx.request(.cityWeather(city: cityName))
+            .filterSuccessfulStatusCodes()
+            .map(WeatherResponse.self)
+    }
 }

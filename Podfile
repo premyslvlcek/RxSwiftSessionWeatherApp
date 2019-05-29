@@ -7,5 +7,6 @@ target 'RxSwiftSessionWeatherApp' do
 	pod 'RxSwift'
 	pod 'RxCocoa'
   pod 'Moya/RxSwift', '~>14.0.0-alpha.1'
+  pod 'RxOptional'
 
 end

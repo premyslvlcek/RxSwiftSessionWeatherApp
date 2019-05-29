@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let networkService = NetworkService()
         let viewModel = ViewModel(networkService: networkService)
         let viewController = ViewController.instantiate(fromStoryboard: storyboard)
+        viewController.bindViewModel(viewModel)
         window.rootViewController = viewController
 
         return true
